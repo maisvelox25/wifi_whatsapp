@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAISVELOX - Wi-Fi e WhatsApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #1ebe5d;
+    }
+    .wifi-box {
+      background: #eee;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+    }
+    a.whatsapp-btn {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Bem-vindo ao Wi-Fi MAISVELOX</h2>
+    <p>Use os dados abaixo para se conectar:</p>
+    <div class="wifi-box">
+      <p><strong>SSID:</strong> MAISVELOX_clientes</p>
+      <p><strong>Segurança:</strong> WPA2</p>
+      <p><strong>Senha:</strong> <span id="wifi-pass">Internetrapida@2640</span></p>
+    </div>
+    <button onclick="copyPass()">Copiar Senha do Wi-Fi</button>
+
+    <hr style="margin: 30px 0;">
+
+    <h3>Fale com a gente pelo WhatsApp</h3>
+    <p>Clique no botão abaixo para iniciar a conversa:</p>
+    <a class="whatsapp-btn" href="https://wa.me/556699911589?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20planos%20de%20Internet" target="_blank">
+      <button>Enviar Mensagem</button>
+    </a>
+  </div>
+
+  <script>
+    function copyPass() {
+      const pass = document.getElementById("wifi-pass").textContent;
+      navigator.clipboard.writeText(pass).then(() => {
+        alert("Senha copiada!");
+      });
+    }
+  </script>
+</body>
+</html>
